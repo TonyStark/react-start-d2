@@ -15,6 +15,15 @@ function Vote(){
     let doeDecrease=()=>{
         setDoe(doe-1)
     }
+    let winnerDecide=()=>{
+        if(john>doe){
+            return "John"
+        }else if(doe>john) {
+            return "Doe"
+        }else{
+            return "Tie"
+        }
+    }
     return(
         <div className="text-center">
             <h1 className="my-5">Simple Voting</h1>
@@ -56,7 +65,8 @@ function Vote(){
                 <div className="col-8">
                     <div className="row justify-content-center align-items-center">
                         <div className="col-8">
-                            <h1 className="border py-3">Total = {john+doe}</h1>
+                            <h1 className="border py-3">Total = {john+doe} <br />
+                            Current Winner = {winnerDecide()}</h1>
                         </div>
                     </div>
                 </div>
